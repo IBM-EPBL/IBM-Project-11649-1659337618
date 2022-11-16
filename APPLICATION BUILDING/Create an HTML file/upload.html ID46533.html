@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Predict</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <style>
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .bg-image {
+        background-image: url("https://www.specialityfoodmagazine.com/assets/images/other/herbs_and_spices.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bg-text {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        border-radius: 25px;
+        position: absolute;
+        top: 50%;
+        height: 95%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 60%;
+        padding: 20px;
+        text-align: left;
+      }
+      .topic-predict {
+        border-radius: 5px;
+        font-size: 26px;
+        text-decoration: underline;
+        padding-bottom: 5px;
+        background-color: rgba(255, 255, 255, 0.704);
+        padding: 10px;
+        text-align: center;
+        color: black;
+      }
+      label {
+        width: 250px;
+        font-size: 16px;
+      }
+      select {
+        width: 200px;
+        height: 30px;
+        padding: 5px;
+      }
+      input {
+        width: 200px;
+        height: 30px;
+        outline: none;
+        padding: 5px;
+      }
+      .my-cta-button {
+        width: 120px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        cursor: pointer;
+        background-color: red;
+        color: white;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 1px solid white;
+      }
+      .my-cta-button:hover {
+        background-color: green;
+        transition-duration: 0.5s;
+      }
+      .home-btn {
+        color: white;
+        text-decoration: none;
+        background-color: blueviolet;
+        border-radius: 5px;
+        padding: 10px 20px;
+        position: absolute;
+        top: 20px;
+        right: 30px;
+      }
+      .home-btn:hover {
+        background-color: orange;
+        transition-duration: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg-image"></div>
+
+    <div class="bg-text">
+      <div class="container">
+        <div id="content">
+          <h1 class="topic-predict">Food Demand Forecasting</h1>
+
+          <form action="{{ url_for('predict') }}" method="POST">
+            <div style="display: flex; justify-content: center">
+              <label for="homepage_featured" class="hi"
+                >Enter Homepage Featured :
+              </label>
+              <select id="homepage_featured" name="homepage_featured">
+                <!-- <option value="">homepage_featured</option> -->
+                <option value="none" selected disabled hidden>
+                  Select an Option
+                </option>
+                <option value="0">Yes</option>
+                <option value="1">No</option>
+              </select>
+            </div>
+
+            <br /><br />
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <label for="emailer_for_promotion"
+                >Enter Emailer for Promotion :
+              </label>
+              <select id="emailer_for_promotion" name="emailer_for_promotion">
+                <option value="none" selected disabled hidden>
+                  Select an Option
+                </option>
+                <option value="0">Yes</option>
+                <option value="1">No</option>
+              </select>
+            </div>
+
+            <br /><br />
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <label for="op_area">Enter Op Area : </label>
+              <input
+                class="form-input"
+                type="text"
+                name="op_area"
+                placeholder="Enter the op_area(2-7)"
+              />
+            </div>
+
+            <br /><br />
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <label for="cuisine"> Enter Cuisine : </label>
+              <select id="cuisine" name="cuisine">
+                <option value="none" selected disabled hidden>
+                  Select an Option
+                </option>
+                <option value="0">Continental</option>
+                <option value="1">Indian</option>
+                <option value="2">Italian</option>
+                <option value="3">Thai</option>
+              </select>
+            </div>
+
+            <br /><br />
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <label for="city_code">Enter City Code : </label>
+              <input
+                class="form-input"
+                type="text"
+                name="city_code"
+                placeholder="Enter city_code"
+              />
+            </div>
+
+            <br /><br />
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <label for="region_code">Enter the region code : </label>
+              <input
+                class="form-input"
+                type="text"
+                name="region_code"
+                placeholder="Enter region_code"
+              />
+            </div>
+
+            <br /><br />
+
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <label for="category">Enter the Category : </label>
+              <select id="category" name="category">
+                <option value="none" selected disabled hidden>
+                  Select an Option
+                </option>
+                <option value="0">Beverages</option>
+                <option value="1">Biryani</option>
+                <option value="2">Desert</option>
+                <option value="3">Extras</option>
+                <option value="4">Fish</option>
+                <option value="5">Other Snacks</option>
+                <option value="6">Pasta</option>
+                <option value="7">Pizza</option>
+                <option value="8">Rice Bowl</option>
+                <option value="9">Salad</option>
+                <option value="10">Sandwich</option>
+                <option value="11">Seafood</option>
+                <option value="12">Soup</option>
+                <option value="13">Starters</option>
+              </select>
+            </div>
+
+            <br /><br />
+
+            <button type="submit" class="my-cta-button">Predict</button>
+          </form>
+
+          <br />
+          <h1 class="predict" style="text-align: center">
+            Demand is: {{ prediction_text }}
+          </h1>
+        </div>
+      </div>
+    </div>
+    <a href="./home.html" class="home-btn">Home</a>
+  </body>
+</html>

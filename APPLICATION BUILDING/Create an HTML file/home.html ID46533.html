@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Home</title>
+    <link type="text/css" rel="stylesheet" href="/Flask/static/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;600;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/v4-shims.min.css"
+    />
+    <style>
+      body,
+      html {
+        height: 96%;
+        margin: 0;
+        font-family: "Poppins", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      .bg-image {
+        background-image: url("https://thumbs.dreamstime.com/b/healthy-food-selection-healthy-food-selection-fruits-vegetables-seeds-superfood-cereals-gray-background-121936825.jpg");
+        height: 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+      }
+
+      .bg-text {
+        background-color: rgba(0, 0, 0, 0.6);
+        color: white;
+        border-radius: 10px;
+        font-weight: bold;
+        border: 3px solid #f1f1f1;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        width: 80%;
+        padding: 20px;
+        text-align: center;
+      }
+
+      .bg-text h2 {
+        border-radius: 5px;
+        font-size: 24px;
+        text-decoration: underline;
+        padding-bottom: 5px;
+        background-color: rgba(255, 255, 255, 0.704);
+        padding: 10px;
+        color: black;
+      }
+
+      ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: rgba(0, 0, 255, 0.415);
+      }
+
+      li {
+        float: right;
+      }
+
+      li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-weight: 600;
+      }
+
+      li a:hover {
+        color: orangered;
+        transition-duration: 0.5s;
+      }
+    </style>
+  </head>
+  <body>
+    <ul>
+      <li style="font-size: 20px"><a href="./upload.html">Predict</a></li>
+      <li style="font-size: 20px"><a href="./home.html">Home</a></li>
+    </ul>
+    <div class="bg-image"></div>
+    <div class="bg-text">
+      <h2>About Us</h2>
+      <h1 style="font-size: 50px">Food Demand Forecasting</h1>
+      <p>
+        A food delivery service has to deal with a lot of perishable raw
+        materials which makes it all, the most important factor for such a
+        company is to accurately forecast daily and weekly demand. Too much
+        inventory in the warehouse means more risk of wastage, and not enough
+        could lead to out-of-stocks - and push customers to seek solutions from
+        your competitors. The replenishment of majority of raw materials is done
+        on weekly basis and since the raw material is perishable, the
+        procurement planning is of utmost importance, the task is to predict the
+        demand for the next 10 weeks.
+      </p>
+    </div>
+  </body>
+</html>
